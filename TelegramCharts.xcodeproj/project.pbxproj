@@ -11,6 +11,9 @@
 		44D51FCE2235370A00E7005A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44D51FCD2235370A00E7005A /* Assets.xcassets */; };
 		44D51FD12235370A00E7005A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44D51FCF2235370A00E7005A /* LaunchScreen.storyboard */; };
 		44D51FDB2235380400E7005A /* StatisticsViewConstroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D51FDA2235380400E7005A /* StatisticsViewConstroller.swift */; };
+		44D51FE02235393000E7005A /* StatisticsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D51FDF2235393000E7005A /* StatisticsPresenter.swift */; };
+		44D51FE3223539B500E7005A /* ViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D51FE2223539B500E7005A /* ViewOutput.swift */; };
+		44D51FE522353B4100E7005A /* StatisticsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D51FE422353B4100E7005A /* StatisticsAssembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +23,9 @@
 		44D51FD02235370A00E7005A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		44D51FD22235370A00E7005A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44D51FDA2235380400E7005A /* StatisticsViewConstroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewConstroller.swift; sourceTree = "<group>"; };
+		44D51FDF2235393000E7005A /* StatisticsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsPresenter.swift; sourceTree = "<group>"; };
+		44D51FE2223539B500E7005A /* ViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewOutput.swift; sourceTree = "<group>"; };
+		44D51FE422353B4100E7005A /* StatisticsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsAssembly.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				44D51FDA2235380400E7005A /* StatisticsViewConstroller.swift */,
+				44D51FDF2235393000E7005A /* StatisticsPresenter.swift */,
+				44D51FE422353B4100E7005A /* StatisticsAssembly.swift */,
 			);
 			path = Statistics;
 			sourceTree = "<group>";
@@ -81,6 +89,7 @@
 		44D51FDD2235382800E7005A /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				44D51FE12235395100E7005A /* Protocols */,
 				44D51FDE2235382F00E7005A /* Extensions */,
 			);
 			path = Common;
@@ -91,6 +100,14 @@
 			children = (
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		44D51FE12235395100E7005A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				44D51FE2223539B500E7005A /* ViewOutput.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,8 +180,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44D51FE522353B4100E7005A /* StatisticsAssembly.swift in Sources */,
 				44D51FC72235370900E7005A /* AppDelegate.swift in Sources */,
 				44D51FDB2235380400E7005A /* StatisticsViewConstroller.swift in Sources */,
+				44D51FE02235393000E7005A /* StatisticsPresenter.swift in Sources */,
+				44D51FE3223539B500E7005A /* ViewOutput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
