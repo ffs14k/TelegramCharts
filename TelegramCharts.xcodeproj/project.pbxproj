@@ -14,6 +14,12 @@
 		44D51FE02235393000E7005A /* StatisticsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D51FDF2235393000E7005A /* StatisticsPresenter.swift */; };
 		44D51FE3223539B500E7005A /* ViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D51FE2223539B500E7005A /* ViewOutput.swift */; };
 		44D51FE522353B4100E7005A /* StatisticsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D51FE422353B4100E7005A /* StatisticsAssembly.swift */; };
+		44D51FED22353D3C00E7005A /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D51FEC22353D3C00E7005A /* ChatView.swift */; };
+		44D51FF12235447F00E7005A /* Setupable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D51FF02235447F00E7005A /* Setupable.swift */; };
+		44D51FF42235456900E7005A /* FlatChartDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D51FF32235456900E7005A /* FlatChartDrawer.swift */; };
+		44D52001223547DB00E7005A /* UIMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D52000223547DB00E7005A /* UIMode.swift */; };
+		44D52003223549E100E7005A /* IntefaceUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D52002223549E100E7005A /* IntefaceUtils.swift */; };
+		44D5200822354E5600E7005A /* UserDefaultsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D5200722354E5600E7005A /* UserDefaultsUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +32,12 @@
 		44D51FDF2235393000E7005A /* StatisticsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsPresenter.swift; sourceTree = "<group>"; };
 		44D51FE2223539B500E7005A /* ViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewOutput.swift; sourceTree = "<group>"; };
 		44D51FE422353B4100E7005A /* StatisticsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsAssembly.swift; sourceTree = "<group>"; };
+		44D51FEC22353D3C00E7005A /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		44D51FF02235447F00E7005A /* Setupable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setupable.swift; sourceTree = "<group>"; };
+		44D51FF32235456900E7005A /* FlatChartDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatChartDrawer.swift; sourceTree = "<group>"; };
+		44D52000223547DB00E7005A /* UIMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIMode.swift; sourceTree = "<group>"; };
+		44D52002223549E100E7005A /* IntefaceUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntefaceUtils.swift; sourceTree = "<group>"; };
+		44D5200722354E5600E7005A /* UserDefaultsUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +101,9 @@
 		44D51FDD2235382800E7005A /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				44D5200922354F0000E7005A /* Constants */,
+				44D51FF7223545F400E7005A /* Utils */,
+				44D51FEA22353D1800E7005A /* UIComponents */,
 				44D51FE12235395100E7005A /* Protocols */,
 				44D51FDE2235382F00E7005A /* Extensions */,
 			);
@@ -106,8 +121,67 @@
 			isa = PBXGroup;
 			children = (
 				44D51FE2223539B500E7005A /* ViewOutput.swift */,
+				44D51FF02235447F00E7005A /* Setupable.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		44D51FEA22353D1800E7005A /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				44D51FEB22353D2C00E7005A /* Charts */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		44D51FEB22353D2C00E7005A /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+				44D51FF22235455900E7005A /* Drawers */,
+				44D51FEC22353D3C00E7005A /* ChatView.swift */,
+			);
+			path = Charts;
+			sourceTree = "<group>";
+		};
+		44D51FF22235455900E7005A /* Drawers */ = {
+			isa = PBXGroup;
+			children = (
+				44D51FF32235456900E7005A /* FlatChartDrawer.swift */,
+			);
+			path = Drawers;
+			sourceTree = "<group>";
+		};
+		44D51FF7223545F400E7005A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				44D5200622354E4600E7005A /* UserDefaultsUtils */,
+				44D51FFD2235473C00E7005A /* InterfaceUtils */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		44D51FFD2235473C00E7005A /* InterfaceUtils */ = {
+			isa = PBXGroup;
+			children = (
+				44D52000223547DB00E7005A /* UIMode.swift */,
+				44D52002223549E100E7005A /* IntefaceUtils.swift */,
+			);
+			path = InterfaceUtils;
+			sourceTree = "<group>";
+		};
+		44D5200622354E4600E7005A /* UserDefaultsUtils */ = {
+			isa = PBXGroup;
+			children = (
+				44D5200722354E5600E7005A /* UserDefaultsUtils.swift */,
+			);
+			path = UserDefaultsUtils;
+			sourceTree = "<group>";
+		};
+		44D5200922354F0000E7005A /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,9 +256,15 @@
 			files = (
 				44D51FE522353B4100E7005A /* StatisticsAssembly.swift in Sources */,
 				44D51FC72235370900E7005A /* AppDelegate.swift in Sources */,
+				44D52001223547DB00E7005A /* UIMode.swift in Sources */,
+				44D5200822354E5600E7005A /* UserDefaultsUtils.swift in Sources */,
 				44D51FDB2235380400E7005A /* StatisticsViewConstroller.swift in Sources */,
+				44D52003223549E100E7005A /* IntefaceUtils.swift in Sources */,
 				44D51FE02235393000E7005A /* StatisticsPresenter.swift in Sources */,
+				44D51FED22353D3C00E7005A /* ChatView.swift in Sources */,
 				44D51FE3223539B500E7005A /* ViewOutput.swift in Sources */,
+				44D51FF42235456900E7005A /* FlatChartDrawer.swift in Sources */,
+				44D51FF12235447F00E7005A /* Setupable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

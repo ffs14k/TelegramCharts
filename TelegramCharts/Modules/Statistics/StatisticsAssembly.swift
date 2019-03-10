@@ -15,6 +15,7 @@ final class StatisticsAssembly {
         let view = StatisticsViewController()
         let presenter = StatisticsPresenter()
         
+        view.title = "Statistics"
         view.presenter = presenter
         
         presenter.view = view

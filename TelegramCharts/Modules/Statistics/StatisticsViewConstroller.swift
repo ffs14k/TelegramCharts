@@ -47,6 +47,7 @@ final class StatisticsViewController: UIViewController {
     
     private func configureInterface() {
         
+        view.backgroundColor = IntefaceUtils.bgColor
         
     }
     
