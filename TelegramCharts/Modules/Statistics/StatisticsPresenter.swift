@@ -6,6 +6,8 @@
 //  Copyright © 2019 Eugene. All rights reserved.
 //
 
+import Foundation
+
 protocol StatisticsViewOutput: ViewOutput {
     
 }
@@ -21,6 +23,12 @@ final class StatisticsPresenter {
 extension StatisticsPresenter: StatisticsViewOutput {
     
     func viewDidLoad() {
+        
+        let decoder = JSONDecoder()
+        
+        let jsonResponse = try? decoder.decode([ChartRemote].self, from: chartsJSON)
+        
+        print(jsonResponse!)
         
     }
     

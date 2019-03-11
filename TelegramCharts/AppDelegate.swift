@@ -17,9 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         
-        IntefaceUtils.uiMode = .light
+        IntefaceUtils.uiMode = .dark
         
-        let root = StatisticsViewController()
+        let root = StatisticsAssembly.assembleModule()
         
         window = UIWindow()
         window?.backgroundColor = .white

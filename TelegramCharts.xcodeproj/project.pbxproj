@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		443148612236DDA1002F219F /* ChartsJSONORIGINAL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443148602236DDA1002F219F /* ChartsJSONORIGINAL.swift */; };
+		443148632236F9F0002F219F /* ChartsJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443148622236F9F0002F219F /* ChartsJSON.swift */; };
+		443148662236FADE002F219F /* ChartRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443148652236FADE002F219F /* ChartRemote.swift */; };
 		44D51FC72235370900E7005A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D51FC62235370900E7005A /* AppDelegate.swift */; };
 		44D51FCE2235370A00E7005A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44D51FCD2235370A00E7005A /* Assets.xcassets */; };
 		44D51FD12235370A00E7005A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44D51FCF2235370A00E7005A /* LaunchScreen.storyboard */; };
@@ -23,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		443148602236DDA1002F219F /* ChartsJSONORIGINAL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsJSONORIGINAL.swift; sourceTree = "<group>"; };
+		443148622236F9F0002F219F /* ChartsJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsJSON.swift; sourceTree = "<group>"; };
+		443148652236FADE002F219F /* ChartRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartRemote.swift; sourceTree = "<group>"; };
 		44D51FC32235370900E7005A /* TelegramCharts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TelegramCharts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44D51FC62235370900E7005A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44D51FCD2235370A00E7005A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +57,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		443148642236FACA002F219F /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				443148652236FADE002F219F /* ChartRemote.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 		44D51FBA2235370800E7005A = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +115,7 @@
 		44D51FDD2235382800E7005A /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				443148642236FACA002F219F /* Entities */,
 				44D5200922354F0000E7005A /* Constants */,
 				44D51FF7223545F400E7005A /* Utils */,
 				44D51FEA22353D1800E7005A /* UIComponents */,
@@ -180,6 +195,8 @@
 		44D5200922354F0000E7005A /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				443148602236DDA1002F219F /* ChartsJSONORIGINAL.swift */,
+				443148622236F9F0002F219F /* ChartsJSON.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -260,7 +277,10 @@
 				44D5200822354E5600E7005A /* UserDefaultsUtils.swift in Sources */,
 				44D51FDB2235380400E7005A /* StatisticsViewConstroller.swift in Sources */,
 				44D52003223549E100E7005A /* IntefaceUtils.swift in Sources */,
+				443148612236DDA1002F219F /* ChartsJSONORIGINAL.swift in Sources */,
 				44D51FE02235393000E7005A /* StatisticsPresenter.swift in Sources */,
+				443148662236FADE002F219F /* ChartRemote.swift in Sources */,
+				443148632236F9F0002F219F /* ChartsJSON.swift in Sources */,
 				44D51FED22353D3C00E7005A /* ChatView.swift in Sources */,
 				44D51FE3223539B500E7005A /* ViewOutput.swift in Sources */,
 				44D51FF42235456900E7005A /* FlatChartDrawer.swift in Sources */,
