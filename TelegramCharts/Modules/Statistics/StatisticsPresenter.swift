@@ -16,6 +16,7 @@ final class StatisticsPresenter {
     
     weak var view: StatisticsViewInput?
     
+    let provider = FollowersChartDataProvider()
 }
 
 
@@ -26,10 +27,16 @@ extension StatisticsPresenter: StatisticsViewOutput {
         
         let decoder = JSONDecoder()
         
-        let jsonResponse = try? decoder.decode([ChartRemote].self, from: chartsJSON)
+        guard let charts = try? decoder.decode([ChartRemote].self, from: chartsJSON) else {
+            view?.setup(with: .failure)
+            return
+        }
         
-        print(jsonResponse!)
+        let firstChart = charts[0]
         
+        
+        let chart = provider.createChart(with: firstChart)
+        view?.setup(with: .success(firstChart: chart))
     }
     
     

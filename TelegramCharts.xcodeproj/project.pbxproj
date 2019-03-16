@@ -10,6 +10,13 @@
 		443148612236DDA1002F219F /* ChartsJSONORIGINAL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443148602236DDA1002F219F /* ChartsJSONORIGINAL.swift */; };
 		443148632236F9F0002F219F /* ChartsJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443148622236F9F0002F219F /* ChartsJSON.swift */; };
 		443148662236FADE002F219F /* ChartRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443148652236FADE002F219F /* ChartRemote.swift */; };
+		4431486822399064002F219F /* ChartMirrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4431486722399064002F219F /* ChartMirrorView.swift */; };
+		4431486C223991DB002F219F /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4431486B223991DB002F219F /* Chart.swift */; };
+		4431486E223995D7002F219F /* ChartDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4431486D223995D7002F219F /* ChartDataProvider.swift */; };
+		4431487022399DE7002F219F /* UIColor+InitHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4431486F22399DE7002F219F /* UIColor+InitHex.swift */; };
+		449A1A13223D4D8E000F5A18 /* Collection+IsNotEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449A1A12223D4D8E000F5A18 /* Collection+IsNotEmpty.swift */; };
+		449A1A15223D5357000F5A18 /* CGRect+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449A1A14223D5357000F5A18 /* CGRect+Helpers.swift */; };
+		449A1A17223D6816000F5A18 /* Collection+Safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449A1A16223D6816000F5A18 /* Collection+Safe.swift */; };
 		44D51FC72235370900E7005A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D51FC62235370900E7005A /* AppDelegate.swift */; };
 		44D51FCE2235370A00E7005A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44D51FCD2235370A00E7005A /* Assets.xcassets */; };
 		44D51FD12235370A00E7005A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44D51FCF2235370A00E7005A /* LaunchScreen.storyboard */; };
@@ -17,9 +24,8 @@
 		44D51FE02235393000E7005A /* StatisticsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D51FDF2235393000E7005A /* StatisticsPresenter.swift */; };
 		44D51FE3223539B500E7005A /* ViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D51FE2223539B500E7005A /* ViewOutput.swift */; };
 		44D51FE522353B4100E7005A /* StatisticsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D51FE422353B4100E7005A /* StatisticsAssembly.swift */; };
-		44D51FED22353D3C00E7005A /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D51FEC22353D3C00E7005A /* ChatView.swift */; };
+		44D51FED22353D3C00E7005A /* FollowersChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D51FEC22353D3C00E7005A /* FollowersChatView.swift */; };
 		44D51FF12235447F00E7005A /* Setupable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D51FF02235447F00E7005A /* Setupable.swift */; };
-		44D51FF42235456900E7005A /* FlatChartDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D51FF32235456900E7005A /* FlatChartDrawer.swift */; };
 		44D52001223547DB00E7005A /* UIMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D52000223547DB00E7005A /* UIMode.swift */; };
 		44D52003223549E100E7005A /* IntefaceUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D52002223549E100E7005A /* IntefaceUtils.swift */; };
 		44D5200822354E5600E7005A /* UserDefaultsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D5200722354E5600E7005A /* UserDefaultsUtils.swift */; };
@@ -29,6 +35,13 @@
 		443148602236DDA1002F219F /* ChartsJSONORIGINAL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsJSONORIGINAL.swift; sourceTree = "<group>"; };
 		443148622236F9F0002F219F /* ChartsJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsJSON.swift; sourceTree = "<group>"; };
 		443148652236FADE002F219F /* ChartRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartRemote.swift; sourceTree = "<group>"; };
+		4431486722399064002F219F /* ChartMirrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartMirrorView.swift; sourceTree = "<group>"; };
+		4431486B223991DB002F219F /* Chart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
+		4431486D223995D7002F219F /* ChartDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDataProvider.swift; sourceTree = "<group>"; };
+		4431486F22399DE7002F219F /* UIColor+InitHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+InitHex.swift"; sourceTree = "<group>"; };
+		449A1A12223D4D8E000F5A18 /* Collection+IsNotEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+IsNotEmpty.swift"; sourceTree = "<group>"; };
+		449A1A14223D5357000F5A18 /* CGRect+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+Helpers.swift"; sourceTree = "<group>"; };
+		449A1A16223D6816000F5A18 /* Collection+Safe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Safe.swift"; sourceTree = "<group>"; };
 		44D51FC32235370900E7005A /* TelegramCharts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TelegramCharts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44D51FC62235370900E7005A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44D51FCD2235370A00E7005A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,9 +51,8 @@
 		44D51FDF2235393000E7005A /* StatisticsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsPresenter.swift; sourceTree = "<group>"; };
 		44D51FE2223539B500E7005A /* ViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewOutput.swift; sourceTree = "<group>"; };
 		44D51FE422353B4100E7005A /* StatisticsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsAssembly.swift; sourceTree = "<group>"; };
-		44D51FEC22353D3C00E7005A /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		44D51FEC22353D3C00E7005A /* FollowersChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersChatView.swift; sourceTree = "<group>"; };
 		44D51FF02235447F00E7005A /* Setupable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setupable.swift; sourceTree = "<group>"; };
-		44D51FF32235456900E7005A /* FlatChartDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatChartDrawer.swift; sourceTree = "<group>"; };
 		44D52000223547DB00E7005A /* UIMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIMode.swift; sourceTree = "<group>"; };
 		44D52002223549E100E7005A /* IntefaceUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntefaceUtils.swift; sourceTree = "<group>"; };
 		44D5200722354E5600E7005A /* UserDefaultsUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsUtils.swift; sourceTree = "<group>"; };
@@ -61,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				443148652236FADE002F219F /* ChartRemote.swift */,
+				4431486B223991DB002F219F /* Chart.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -98,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				44D51FDC2235380800E7005A /* Statistics */,
+				4431486D223995D7002F219F /* ChartDataProvider.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -128,6 +142,10 @@
 		44D51FDE2235382F00E7005A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				4431486F22399DE7002F219F /* UIColor+InitHex.swift */,
+				449A1A12223D4D8E000F5A18 /* Collection+IsNotEmpty.swift */,
+				449A1A14223D5357000F5A18 /* CGRect+Helpers.swift */,
+				449A1A16223D6816000F5A18 /* Collection+Safe.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -153,7 +171,8 @@
 			isa = PBXGroup;
 			children = (
 				44D51FF22235455900E7005A /* Drawers */,
-				44D51FEC22353D3C00E7005A /* ChatView.swift */,
+				44D51FEC22353D3C00E7005A /* FollowersChatView.swift */,
+				4431486722399064002F219F /* ChartMirrorView.swift */,
 			);
 			path = Charts;
 			sourceTree = "<group>";
@@ -161,7 +180,6 @@
 		44D51FF22235455900E7005A /* Drawers */ = {
 			isa = PBXGroup;
 			children = (
-				44D51FF32235456900E7005A /* FlatChartDrawer.swift */,
 			);
 			path = Drawers;
 			sourceTree = "<group>";
@@ -271,20 +289,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				449A1A15223D5357000F5A18 /* CGRect+Helpers.swift in Sources */,
 				44D51FE522353B4100E7005A /* StatisticsAssembly.swift in Sources */,
 				44D51FC72235370900E7005A /* AppDelegate.swift in Sources */,
 				44D52001223547DB00E7005A /* UIMode.swift in Sources */,
 				44D5200822354E5600E7005A /* UserDefaultsUtils.swift in Sources */,
+				4431486C223991DB002F219F /* Chart.swift in Sources */,
 				44D51FDB2235380400E7005A /* StatisticsViewConstroller.swift in Sources */,
 				44D52003223549E100E7005A /* IntefaceUtils.swift in Sources */,
 				443148612236DDA1002F219F /* ChartsJSONORIGINAL.swift in Sources */,
 				44D51FE02235393000E7005A /* StatisticsPresenter.swift in Sources */,
 				443148662236FADE002F219F /* ChartRemote.swift in Sources */,
 				443148632236F9F0002F219F /* ChartsJSON.swift in Sources */,
-				44D51FED22353D3C00E7005A /* ChatView.swift in Sources */,
+				449A1A13223D4D8E000F5A18 /* Collection+IsNotEmpty.swift in Sources */,
+				44D51FED22353D3C00E7005A /* FollowersChatView.swift in Sources */,
+				449A1A17223D6816000F5A18 /* Collection+Safe.swift in Sources */,
+				4431486822399064002F219F /* ChartMirrorView.swift in Sources */,
 				44D51FE3223539B500E7005A /* ViewOutput.swift in Sources */,
-				44D51FF42235456900E7005A /* FlatChartDrawer.swift in Sources */,
+				4431487022399DE7002F219F /* UIColor+InitHex.swift in Sources */,
 				44D51FF12235447F00E7005A /* Setupable.swift in Sources */,
+				4431486E223995D7002F219F /* ChartDataProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

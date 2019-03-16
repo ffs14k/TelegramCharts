@@ -6,15 +6,17 @@
 //  Copyright © 2019 Eugene. All rights reserved.
 //
 
-struct ChartsResponse: Codable {
-    let charts: [ChartRemote]
-}
+import QuartzCore
 
 struct ChartRemote: Codable {
-    let chart: [ChartEntity]
+    let lines: [ChartLineRemote]
+    
+    enum CodingKeys: String, CodingKey {
+        case lines = "chart"
+    }
 }
 
-struct ChartEntity: Codable {
+struct ChartLineRemote: Codable {
     
     let axis: String
     let type: String?
