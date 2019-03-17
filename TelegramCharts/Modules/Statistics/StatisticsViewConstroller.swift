@@ -79,35 +79,39 @@ final class StatisticsViewController: UIViewController {
         btnMinus.heightAnchor.constraint(equalToConstant: 50).isActive = true
         btnMinus.widthAnchor.constraint(equalToConstant: 100).isActive = true
         
-//        chartView.translatesAutoresizingMaskIntoConstraints = false
+        chartView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(chartView)
-        chartView.frame = CGRect(x: 0, y: view.frame.midY - 150, width: view.frame.width, height: 300)
-//        chartView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-//        chartView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-//        heightConstraint = chartView.heightAnchor.constraint(equalToConstant: 300)
-//        heightConstraint?.isActive = true
+        chartView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        chartView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        chartView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        heightConstraint = chartView.heightAnchor.constraint(equalToConstant: 350)
+        heightConstraint?.isActive = true
 //        chartView.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
+        
+//        let scope = FollowersChartView()
+//        scope.translatesAutoresizingMaskIntoConstraints = false
+//        view.addSubview(scope)
+//        scope.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+//        scope.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+//        heightConstraint = scope.heightAnchor.constraint(equalToConstant: 200)
+//        heightConstraint?.isActive = true
+//        scope.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
+
     }
     
     @objc private func plusHeight() {
         
-//        guard let constr = heightConstraint else { return }
-//        constr.constant = constr.constant + 30
-//        chartView.layoutIfNeeded()
-        
-        let h = chartView.frame.height + 20
-        chartView.frame.size = CGSize(width: view.frame.width, height: h)
+        guard let constr = heightConstraint else { return }
+        constr.constant = constr.constant + 30
+        chartView.layoutIfNeeded()
         
     }
     
     @objc private func minusHeight() {
         
-//        guard let constr = heightConstraint else { return }
-//        constr.constant = constr.constant - 30
-//        chartView.layoutIfNeeded()
-        
-        let h = chartView.frame.height - 20
-        chartView.frame.size = CGSize(width: view.frame.width, height: h)
+        guard let constr = heightConstraint else { return }
+        constr.constant = constr.constant - 30
+        chartView.layoutIfNeeded()
     }
     
 }

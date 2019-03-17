@@ -17,6 +17,9 @@
 		449A1A13223D4D8E000F5A18 /* Collection+IsNotEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449A1A12223D4D8E000F5A18 /* Collection+IsNotEmpty.swift */; };
 		449A1A15223D5357000F5A18 /* CGRect+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449A1A14223D5357000F5A18 /* CGRect+Helpers.swift */; };
 		449A1A17223D6816000F5A18 /* Collection+Safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449A1A16223D6816000F5A18 /* Collection+Safe.swift */; };
+		449A1A19223E489F000F5A18 /* ChartControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449A1A18223E489F000F5A18 /* ChartControllerView.swift */; };
+		449A1A1C223E4AB3000F5A18 /* ScopeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449A1A1B223E4AB3000F5A18 /* ScopeView.swift */; };
+		449A1A1E223EC1B1000F5A18 /* CGContext+DrawLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449A1A1D223EC1B1000F5A18 /* CGContext+DrawLine.swift */; };
 		44D51FC72235370900E7005A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D51FC62235370900E7005A /* AppDelegate.swift */; };
 		44D51FCE2235370A00E7005A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44D51FCD2235370A00E7005A /* Assets.xcassets */; };
 		44D51FD12235370A00E7005A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44D51FCF2235370A00E7005A /* LaunchScreen.storyboard */; };
@@ -42,6 +45,9 @@
 		449A1A12223D4D8E000F5A18 /* Collection+IsNotEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+IsNotEmpty.swift"; sourceTree = "<group>"; };
 		449A1A14223D5357000F5A18 /* CGRect+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+Helpers.swift"; sourceTree = "<group>"; };
 		449A1A16223D6816000F5A18 /* Collection+Safe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Safe.swift"; sourceTree = "<group>"; };
+		449A1A18223E489F000F5A18 /* ChartControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartControllerView.swift; sourceTree = "<group>"; };
+		449A1A1B223E4AB3000F5A18 /* ScopeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScopeView.swift; sourceTree = "<group>"; };
+		449A1A1D223EC1B1000F5A18 /* CGContext+DrawLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGContext+DrawLine.swift"; sourceTree = "<group>"; };
 		44D51FC32235370900E7005A /* TelegramCharts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TelegramCharts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44D51FC62235370900E7005A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44D51FCD2235370A00E7005A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -76,6 +82,16 @@
 				4431486B223991DB002F219F /* Chart.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		449A1A1A223E4A8B000F5A18 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				449A1A18223E489F000F5A18 /* ChartControllerView.swift */,
+				4431486722399064002F219F /* ChartMirrorView.swift */,
+				449A1A1B223E4AB3000F5A18 /* ScopeView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		44D51FBA2235370800E7005A = {
@@ -146,6 +162,7 @@
 				449A1A12223D4D8E000F5A18 /* Collection+IsNotEmpty.swift */,
 				449A1A14223D5357000F5A18 /* CGRect+Helpers.swift */,
 				449A1A16223D6816000F5A18 /* Collection+Safe.swift */,
+				449A1A1D223EC1B1000F5A18 /* CGContext+DrawLine.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -170,18 +187,10 @@
 		44D51FEB22353D2C00E7005A /* Charts */ = {
 			isa = PBXGroup;
 			children = (
-				44D51FF22235455900E7005A /* Drawers */,
+				449A1A1A223E4A8B000F5A18 /* Components */,
 				44D51FEC22353D3C00E7005A /* FollowersChatView.swift */,
-				4431486722399064002F219F /* ChartMirrorView.swift */,
 			);
 			path = Charts;
-			sourceTree = "<group>";
-		};
-		44D51FF22235455900E7005A /* Drawers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Drawers;
 			sourceTree = "<group>";
 		};
 		44D51FF7223545F400E7005A /* Utils */ = {
@@ -303,12 +312,15 @@
 				443148632236F9F0002F219F /* ChartsJSON.swift in Sources */,
 				449A1A13223D4D8E000F5A18 /* Collection+IsNotEmpty.swift in Sources */,
 				44D51FED22353D3C00E7005A /* FollowersChatView.swift in Sources */,
+				449A1A1E223EC1B1000F5A18 /* CGContext+DrawLine.swift in Sources */,
 				449A1A17223D6816000F5A18 /* Collection+Safe.swift in Sources */,
 				4431486822399064002F219F /* ChartMirrorView.swift in Sources */,
 				44D51FE3223539B500E7005A /* ViewOutput.swift in Sources */,
 				4431487022399DE7002F219F /* UIColor+InitHex.swift in Sources */,
+				449A1A19223E489F000F5A18 /* ChartControllerView.swift in Sources */,
 				44D51FF12235447F00E7005A /* Setupable.swift in Sources */,
 				4431486E223995D7002F219F /* ChartDataProvider.swift in Sources */,
+				449A1A1C223E4AB3000F5A18 /* ScopeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

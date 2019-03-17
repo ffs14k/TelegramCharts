@@ -16,13 +16,9 @@ final class ChartMirrorView: UIView {
     }
     
     
+    // MARK: - Properties
+    
     private var state: State = .initial
-    
-    
-    func set(in state: State) {
-        self.state = state
-        setNeedsDisplay()
-    }
     
     
     // MARK: - Drawing
@@ -40,43 +36,45 @@ final class ChartMirrorView: UIView {
         
     }
     
+    
+    // MARK: - Public methods
+    
+    func set(in state: State) {
+        self.state = state
+        setNeedsDisplay()
+    }
+    
+    
+    // MARK: - Private methods
+    
     private func restoreMirrorView(in context: CGContext) {
         
-        context.setFillColor(IntefaceUtils.bgColor.cgColor)
+        context.setFillColor(IntefaceUtils.chartBgColor.cgColor)
         context.fill(bounds)
     }
     
     private func drawChart(with abscissa: Abscissa, and ordinates: [Ordinate], in context: CGContext) {
         
-        context.setFillColor(IntefaceUtils.bgColor.cgColor)
-        context.fill(frame)
+        context.setFillColor(IntefaceUtils.chartBgColor.cgColor)
+        context.fill(bounds)
         
         let xValues = scaleX(abscissa.values)
-        let sacleY = yScale
+        let yScale = currentYScale
 
         for ordinate in ordinates {
-
-            context.setStrokeColor(ordinate.color)
-
-            let path = UIBezierPath()
-            path.move(to: frame.bottomLeft)
-            path.lineWidth = 2
-
-            let yValues = scaleY(ordinate.values, with: sacleY)
-
-
-            for (idx, y) in yValues.enumerated() {
-
-                guard let x = xValues[safe: idx] else { return }
-
-                path.addLine(to: CGPoint(x: x, y: y))
+            
+            var yValues = scaleY(ordinate.values, with: yScale)
+            
+            if yValues.count > xValues.count {
+                yValues.removeSubrange(yValues.count - xValues.count...xValues.endIndex)
             }
-
-            path.stroke()
-
+            
+            let endpoints = xValues.enumerated().map { (idx, x) -> CGPoint in
+                return CGPoint(x: x, y: yValues[idx])
+            }
+            
+            context.drawLine(from: bounds.bottomLeft, with: endpoints, width: 2, color: ordinate.color)
         }
-
-        context.strokePath()
         
     }
     
@@ -104,7 +102,7 @@ final class ChartMirrorView: UIView {
     }
     
     
-    private var yScale: CGFloat {
+    private var currentYScale: CGFloat {
         
         let maxY = maxYValue
         guard maxY != 0 else { return 0 }
