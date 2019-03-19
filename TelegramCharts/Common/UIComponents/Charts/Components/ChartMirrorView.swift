@@ -41,7 +41,7 @@ final class ChartMirrorView: UIView {
     
     func set(in state: State) {
         self.state = state
-        setNeedsDisplay()
+        self.setNeedsDisplay()
     }
     
     
@@ -119,12 +119,13 @@ final class ChartMirrorView: UIView {
             
         case .update(_, let ordinates):
             
-            var maxValues = Array(repeating: CGFloat(0), count: ordinates.count)
+            var maxValue: CGFloat = 0
             
-            for (idx, ordinate) in ordinates.enumerated() {
-                maxValues[idx] = CGFloat(ordinate.values.max() ?? 0)
+            for ordinate in ordinates {
+                let max = ordinate.values.max() ?? 0
+                if max > maxValue { maxValue = max }
             }
-            return maxValues.max() ?? 0
+            return maxValue
         }
         
     }

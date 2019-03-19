@@ -27,6 +27,8 @@ final class FollowersChartView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        chartControllerView.delegate = self
+        
         addSubview(chartMirror)
         addSubview(chartControllerView)
         
@@ -60,7 +62,6 @@ final class FollowersChartView: UIView {
             chartMirror.set(in: .initial)
             chartControllerView.set(in: .initial)
         case .normal(let chart):
-            chartMirror.set(in: .update(abscissa: chart.abscissa, ordinates: chart.ordinates))
             chartControllerView.set(in: .normal(chart: chart))
         }
         
@@ -78,6 +79,42 @@ final class FollowersChartView: UIView {
                                            width: frame.width,
                                            height: frame.height - mirrorHeight - 10)
     }
+    
+}
+
+
+// MARK: - ChartControllerView
+extension FollowersChartView: ChartControllerViewDelegate {
+    
+    func scopeDidChange(on frame: CGRect, in controllerFrame: CGRect) {
+        
+        guard case let State.normal(chart) = state else { return }
+        
+        let relativeScopeWidth = frame.width / controllerFrame.width
+        let relativeScopeOriginX = frame.origin.x / controllerFrame.width
+        
+        let abscissaPoints = CGFloat(chart.abscissa.values.count)
+        let startPoint = abscissaPoints * relativeScopeOriginX
+        let endPoint = startPoint + abscissaPoints * relativeScopeWidth
+        
+        let xMirrorValues = Array(chart.abscissa.values[Int(startPoint)..<Int(endPoint)])
+        let mirrorAbscissa = Abscissa(values: xMirrorValues)
+        
+        let mirrorOrdinates = chart.ordinates.map { ordinate -> Ordinate in
+            
+            let yMirrorValues = Array(ordinate.values[Int(startPoint)..<Int(endPoint)])
+            
+            let mirrorOrdinate = Ordinate(type: ordinate.type,
+                                          name: ordinate.name,
+                                          color: ordinate.color,
+                                          values: yMirrorValues)
+         
+            return mirrorOrdinate
+        }
+        
+        chartMirror.set(in: .update(abscissa: mirrorAbscissa, ordinates: mirrorOrdinates))
+    }
+    
     
 }
 

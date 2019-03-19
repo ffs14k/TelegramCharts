@@ -8,7 +8,6 @@
 
 import QuartzCore
 
-
 struct Chart {
     let abscissa: Abscissa
     let ordinates: [Ordinate]

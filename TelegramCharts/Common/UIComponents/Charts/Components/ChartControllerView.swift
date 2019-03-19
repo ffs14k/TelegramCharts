@@ -13,6 +13,10 @@ import UIKit
 private let scopeMinimumWidth: CGFloat = 140
 
 
+protocol ChartControllerViewDelegate: AnyObject {
+    func scopeDidChange(on frame: CGRect, in controllerFrame: CGRect)
+}
+
 final class ChartControllerView: UIView {
     
     enum State {
@@ -22,6 +26,8 @@ final class ChartControllerView: UIView {
     
     
     // MARK: - Properties
+    
+    weak var delegate: ChartControllerViewDelegate?
     
     private var state: State = .initial
     private var currentScopeFrame: CGRect = .zero
@@ -51,10 +57,13 @@ final class ChartControllerView: UIView {
         super.layoutSubviews()
         
         if previousSelfFrame != frame {
-            chartMirrorView.frame = bounds
-            chartScopeView.frame = CGRect(x: frame.width - scopeMinimumWidth, y: 0,
-                                          width: scopeMinimumWidth, height: frame.height)
+            
             previousSelfFrame = frame
+            
+            chartMirrorView.frame = bounds
+            chartScopeView.frame = scopeIntialFrame
+            
+            delegate?.scopeDidChange(on: scopeIntialFrame, in: frame)
         }
         
     }
@@ -76,6 +85,14 @@ final class ChartControllerView: UIView {
         
     }
     
+    
+    // MARK: - Helpers
+    
+    private var scopeIntialFrame: CGRect {
+        return CGRect(x: frame.width - scopeMinimumWidth, y: 0,
+                      width: scopeMinimumWidth, height: frame.height)
+    }
+    
 }
 
 
@@ -83,8 +100,7 @@ final class ChartControllerView: UIView {
 extension ChartControllerView: ScopeViewDelegate {
     
     func scopeDidChange(on frame: CGRect) {
-        currentScopeFrame = frame
-        print(frame)
+        delegate?.scopeDidChange(on: frame, in: self.frame)
     }
     
 }
