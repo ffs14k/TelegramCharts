@@ -20,45 +20,30 @@ final class FollowersChartDataProvider: ChardDataProvider {
         let abscissa = chart.lines.filter { $0.axis == "x" }
         let ordinates = chart.lines.filter { $0.axis == "y" }
         
-        guard let defenetlyAbcissa = abscissa.first else {
+        guard let defenetlyAbcissa = abscissa.first, defenetlyAbcissa.values.isNotEmpty else {
             fatalError()
         }
         
-        guard ordinates.isNotEmpty else {
-            fatalError()
+        ordinates.forEach {
+            guard $0.values.isNotEmpty else {
+                fatalError()
+            }
         }
         
         let abscissCGFloatValues = defenetlyAbcissa.values.map { CGFloat($0) }
-        
         let chartAbscissa = Abscissa(values: abscissCGFloatValues)
-        
-//        var chartOrdinate: [Ordinate<Int>] = []
-        
         
         let chartOrdinates = ordinates.enumerated().map { (idx, ordinateRemote) -> Ordinate in
             
-            var type: LineDashPattern = .none
-            var name = "y \(idx)"
-            var color = UIColor.black.cgColor
+            let type = LineDashPattern(rawValue: ordinateRemote.type ?? "") ?? .none
+            let name = ordinateRemote.name ?? "ordinate \(idx)"
+            let color = UIColor(hex: ordinateRemote.color ?? "", alpha: 1, defaultColor: .red).cgColor
             
-            if let ordinateRemoteType = ordinateRemote.type {
-                // TODO
-            }
+            let ordinateCGFloatValues = ordinateRemote.values.map { CGFloat($0) }
+            let ordinate = Ordinate(type: type, name: name, color: color, values: ordinateCGFloatValues)
             
-            if let ordName = ordinateRemote.name {
-                name = ordName
-            }
-            
-            if let ordColor = ordinateRemote.color {
-                color = UIColor(hex: ordColor).cgColor
-            }
-            
-            let cgFloatValues = ordinateRemote.values.map { CGFloat($0) }
-            
-            let ordinate = Ordinate(type: type, name: name, color: color, values: cgFloatValues)
             return ordinate
         }
-        
         
         return Chart(abscissa: chartAbscissa, ordinates: chartOrdinates)
     }

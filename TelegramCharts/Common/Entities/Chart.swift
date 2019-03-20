@@ -26,7 +26,7 @@ struct Ordinate {
     let values: [CGFloat]
 }
 
-enum LineDashPattern {
+enum LineDashPattern: String {
     case none
     case dash
 }

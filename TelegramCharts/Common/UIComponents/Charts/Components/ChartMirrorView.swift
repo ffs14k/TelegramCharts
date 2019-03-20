@@ -89,8 +89,7 @@ final class ChartMirrorView: UIView {
     
     private func scaleX(_ values: [CGFloat]) -> [CGFloat] {
         
-        guard let minValue = values.min() else { return [] }
-        let originedValues = values.map { $0 - minValue }
+        guard let originedValues = values.origined() else { return values }
         
         let width = frame.width
         guard let maxValue = originedValues.max(), maxValue > width  else { return originedValues }

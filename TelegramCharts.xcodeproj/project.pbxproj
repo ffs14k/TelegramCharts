@@ -20,6 +20,7 @@
 		449A1A19223E489F000F5A18 /* ChartControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449A1A18223E489F000F5A18 /* ChartControllerView.swift */; };
 		449A1A1C223E4AB3000F5A18 /* ScopeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449A1A1B223E4AB3000F5A18 /* ScopeView.swift */; };
 		449A1A1E223EC1B1000F5A18 /* CGContext+DrawLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449A1A1D223EC1B1000F5A18 /* CGContext+DrawLine.swift */; };
+		449A1A2222418CB4000F5A18 /* Collection+OriginedValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449A1A2122418CB4000F5A18 /* Collection+OriginedValues.swift */; };
 		44D51FC72235370900E7005A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D51FC62235370900E7005A /* AppDelegate.swift */; };
 		44D51FCE2235370A00E7005A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44D51FCD2235370A00E7005A /* Assets.xcassets */; };
 		44D51FD12235370A00E7005A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44D51FCF2235370A00E7005A /* LaunchScreen.storyboard */; };
@@ -48,6 +49,7 @@
 		449A1A18223E489F000F5A18 /* ChartControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartControllerView.swift; sourceTree = "<group>"; };
 		449A1A1B223E4AB3000F5A18 /* ScopeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScopeView.swift; sourceTree = "<group>"; };
 		449A1A1D223EC1B1000F5A18 /* CGContext+DrawLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGContext+DrawLine.swift"; sourceTree = "<group>"; };
+		449A1A2122418CB4000F5A18 /* Collection+OriginedValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+OriginedValues.swift"; sourceTree = "<group>"; };
 		44D51FC32235370900E7005A /* TelegramCharts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TelegramCharts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44D51FC62235370900E7005A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44D51FCD2235370A00E7005A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				449A1A14223D5357000F5A18 /* CGRect+Helpers.swift */,
 				449A1A16223D6816000F5A18 /* Collection+Safe.swift */,
 				449A1A1D223EC1B1000F5A18 /* CGContext+DrawLine.swift */,
+				449A1A2122418CB4000F5A18 /* Collection+OriginedValues.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 			files = (
 				449A1A15223D5357000F5A18 /* CGRect+Helpers.swift in Sources */,
 				44D51FE522353B4100E7005A /* StatisticsAssembly.swift in Sources */,
+				449A1A2222418CB4000F5A18 /* Collection+OriginedValues.swift in Sources */,
 				44D51FC72235370900E7005A /* AppDelegate.swift in Sources */,
 				44D52001223547DB00E7005A /* UIMode.swift in Sources */,
 				44D5200822354E5600E7005A /* UserDefaultsUtils.swift in Sources */,
