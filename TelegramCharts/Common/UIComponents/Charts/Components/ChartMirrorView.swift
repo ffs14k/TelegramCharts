@@ -18,22 +18,22 @@ final class ChartMirrorView: UIView {
     
     // MARK: - Properties
     
+    private var graph: [CAShapeLayer] = []
+    private var currentYScale: CGFloat = 0
+    private var previousYScale: CGFloat = 0
     private var state: State = .initial
     
     
-    // MARK: - Drawing
+    // MARK: - Init
     
-    override func draw(_ rect: CGRect) {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         
-        guard let ctx = UIGraphicsGetCurrentContext() else { return }
-        
-        switch state {
-        case .initial:
-            restoreMirrorView(in: ctx)
-        case let .update(abscissa, ordinates):
-            drawChart(with: abscissa, and: ordinates, in: ctx)
-        }
-        
+        backgroundColor = IntefaceUtils.bgColor
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     
@@ -41,53 +41,139 @@ final class ChartMirrorView: UIView {
     
     func set(in state: State) {
         self.state = state
-        self.setNeedsDisplay()
+        setNeedsLayout()
+        layoutIfNeeded()
+    }
+    
+    
+    override func layoutSubviews() {
+        
+        handleDrawing()
     }
     
     
     // MARK: - Private methods
     
-    private func restoreMirrorView(in context: CGContext) {
+    
+    private func handleDrawing() {
         
-        context.setFillColor(IntefaceUtils.chartBgColor.cgColor)
-        context.fill(bounds)
+        guard frame != .zero else {
+            restoreMirrorView()
+            return
+        }
+        
+        switch state {
+            
+        case .initial:
+            restoreMirrorView()
+            
+        case let .update(abscissa, ordinates):
+            
+            let isFirst = graph.isEmpty
+            
+            updateGraph(with: ordinates.count)
+            
+            currentYScale = yScale
+            
+            let lines = createLines(with: abscissa, and: ordinates)
+            
+            if currentYScale == previousYScale || isFirst {
+                drawChart(with: lines)
+            }
+            else {
+                drawChartAnimatly(with: lines)
+            }
+            
+        }
     }
     
-    private func drawChart(with abscissa: Abscissa, and ordinates: [Ordinate], in context: CGContext) {
+    private func updateGraph(with linesCount: Int) {
         
-        context.setFillColor(IntefaceUtils.chartBgColor.cgColor)
-        context.fill(bounds)
+        let difference = abs(graph.count - linesCount)
+        guard difference != 0 else { return }
+    
+        let ordinatesAdded = difference > 0
         
-        let xValues = scaleX(abscissa.values)
-        let yScale = currentYScale
+        if ordinatesAdded {
+            
+            for _ in 0..<difference {
+                let layer = CAShapeLayer()
+                layer.lineWidth = 2
+                layer.lineCap = .round
+                layer.fillColor = UIColor.clear.cgColor
+                graph.append(layer)
+                self.layer.addSublayer(layer)
+            }
+            
 
-        for ordinate in ordinates {
+        }
+        else {
+            graph.removeSubrange(graph.count - difference...graph.count)
+        }
+        
+    }
+    
+    private func restoreMirrorView() {
+        
+        backgroundColor = IntefaceUtils.bgColor
+        layer.sublayers = nil
+        graph = []
+    }
+    
+    
+    private func drawChart(with paths: [(CGPath, CGColor)]) {
+
+        for (index, line) in paths.enumerated() {
             
-            var yValues = scaleY(ordinate.values, with: yScale)
-            
-            if yValues.count > xValues.count {
-                yValues.removeSubrange(yValues.count - xValues.count...xValues.endIndex)
-            }
-            
-            let endpoints = xValues.enumerated().map { (idx, x) -> CGPoint in
-                return CGPoint(x: x, y: yValues[idx])
-            }
-            
-            context.drawLine(from: bounds.bottomLeft, with: endpoints, width: 2, color: ordinate.color)
+            graph[index].path = line.0
+            graph[index].strokeColor = line.1
+        }
+        
+    }
+    
+    private func drawChartAnimatly(with paths: [(CGPath, CGColor)]) {
+    
+        for (index, line) in paths.enumerated() {
+
+            let animation = CABasicAnimation(keyPath: "path")
+            animation.duration = 0.35
+            animation.isRemovedOnCompletion = false
+            animation.fillMode = .forwards
+            animation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+            animation.toValue = line.0
+            graph[index].strokeColor = line.1
+            graph[index].add(animation, forKey: nil)
         }
         
     }
     
     
-    private func scaleY(_ values: [CGFloat], with yScale: CGFloat) -> [CGFloat] {
+    private func createLines(with abscissa: Abscissa, and ordinates: [Ordinate]) -> [(CGPath, CGColor)] {
         
+        var result: [(CGPath, CGColor)] = []
         let height = frame.height
-        let flippedValues = values.map { height - $0 * yScale }
+        let xValues = prepareX(abscissa.values)
+
+        ordinates.forEach { ordinate in
+            
+            let path = UIBezierPath()
+            path.move(to: bounds.bottomLeft)
+            
+            ordinate.values.enumerated().forEach { (idx, yValue) in
+                
+                let scaledAndFlippedY = height - yValue * currentYScale
+                print(xValues[idx], scaledAndFlippedY)
+                path.addLine(to: CGPoint(x: xValues[idx], y: scaledAndFlippedY))
+            }
+            
+            result.append((path.cgPath, ordinate.color))
+        }
         
-        return flippedValues
+        return result
     }
     
-    private func scaleX(_ values: [CGFloat]) -> [CGFloat] {
+    
+    private func prepareX(_ values: [CGFloat]) -> [CGFloat] {
         
         guard let originedValues = values.origined() else { return values }
         
@@ -101,7 +187,9 @@ final class ChartMirrorView: UIView {
     }
     
     
-    private var currentYScale: CGFloat {
+    // MARK: - Helpers
+    
+    private var yScale: CGFloat {
         
         let maxY = maxYValue
         guard maxY != 0 else { return 0 }

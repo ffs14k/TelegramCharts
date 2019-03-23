@@ -86,17 +86,13 @@ final class StatisticsViewController: UIViewController {
         chartView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         heightConstraint = chartView.heightAnchor.constraint(equalToConstant: 350)
         heightConstraint?.isActive = true
-//        chartView.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
         
-//        let scope = FollowersChartView()
-//        scope.translatesAutoresizingMaskIntoConstraints = false
-//        view.addSubview(scope)
-//        scope.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-//        scope.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-//        heightConstraint = scope.heightAnchor.constraint(equalToConstant: 200)
-//        heightConstraint?.isActive = true
-//        scope.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
-
+        
+//        let t = TesView()
+//        t.frame = CGRect(x: 50, y: 200, width: 200, height: 200)
+//        
+//        view.addSubview(t)
+        
     }
     
     @objc private func plusHeight() {
@@ -133,3 +129,54 @@ extension StatisticsViewController: StatisticsViewInput {
     }
     
 }
+
+
+//class TesView: UIView {
+//
+//
+//
+//    private let shape = CAShapeLayer()
+//    private var path = UIBezierPath()
+//
+//    override init(frame: CGRect) {
+//        super.init(frame: frame)
+//
+//
+//        layer.addSublayer(shape)
+//
+//
+//        addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(redraw)))
+//    }
+//
+//    required init?(coder aDecoder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
+//
+//
+//    override func layoutSubviews() {
+//
+//
+//        shape.lineWidth = 2
+//        shape.strokeColor = UIColor.red.cgColor
+//
+//
+//        path.move(to: bounds.bottomLeft)
+//        path.addLine(to: bounds.topRight)
+////        path.stroke()
+//        shape.path = path.cgPath
+//        layer.addSublayer(shape)
+//    }
+//
+//
+//    @objc private func redraw() {
+//
+//        let path = UIBezierPath()
+//        path.move(to: bounds.topLeft)
+//        path.addLine(to: bounds.bottomRight)
+//
+//
+//
+//    }
+//
+//
+//}

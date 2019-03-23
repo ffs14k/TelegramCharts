@@ -24,6 +24,7 @@ final class ScopeView: UIView {
     private let vertivalBordersWidth: CGFloat = 2
     private let horizontalBordersWidth: CGFloat = 8
     
+    private let scopeShape = CAShapeLayer()
     
     // MARK: - Init
     
@@ -45,16 +46,7 @@ final class ScopeView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        setNeedsDisplay()
-    }
-    
-    
-    // MARK: - Drawing
-    
-    override func draw(_ rect: CGRect) {
-        
-        guard let context = UIGraphicsGetCurrentContext() else { return }
-        drawBorders(with: context)
+        drawBorders()
     }
     
     
@@ -64,19 +56,19 @@ final class ScopeView: UIView {
         
         backgroundColor = .clear
         
+        scopeShape.lineWidth = 2
+        scopeShape.strokeColor = UIColor.white.cgColor
+        scopeShape.fillColor = UIColor.clear.cgColor
+        layer.addSublayer(scopeShape)
+        
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan))
         addGestureRecognizer(panGesture)
     }
     
-    private func drawBorders(with context: CGContext) {
+    private func drawBorders() {
         
-        let vRect = bounds.insetBy(dx: vertivalBordersWidth / 2, dy: vertivalBordersWidth / 2)
-        let verticalEdgesEndpoint = [(vRect.topRight, vRect.topLeft), (vRect.bottomRight, vRect.bottomLeft)]
-        context.drawLine(with: verticalEdgesEndpoint, width: vertivalBordersWidth, color: UIColor.white.cgColor)
-        
-        let hRect = bounds.insetBy(dx: horizontalBordersWidth / 2, dy: horizontalBordersWidth / 2)
-        let horizontalEdgesEndpoint = [(hRect.topLeft, hRect.bottomLeft), (hRect.topRight, hRect.bottomRight)]
-        context.drawLine(with: horizontalEdgesEndpoint, width: horizontalBordersWidth, color: UIColor.white.cgColor)
+        let path = UIBezierPath(rect: bounds.insetBy(dx: vertivalBordersWidth / 2, dy: vertivalBordersWidth / 2))
+        scopeShape.path = path.cgPath
     }
     
     private func expandScope(in superFrame: CGRect, currentLocationInSuper: CGPoint) -> CGRect? {

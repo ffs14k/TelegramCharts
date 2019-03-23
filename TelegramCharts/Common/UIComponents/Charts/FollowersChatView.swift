@@ -96,7 +96,7 @@ extension FollowersChartView: ChartControllerViewDelegate {
         let abscissaPoints = CGFloat(chart.abscissa.values.count)
         let startPoint = abscissaPoints * relativeScopeOriginX
         let endPoint = startPoint + abscissaPoints * relativeScopeWidth
-        
+
         let xMirrorValues = Array(chart.abscissa.values[Int(startPoint)..<Int(endPoint)])
         let mirrorAbscissa = Abscissa(values: xMirrorValues)
         
